@@ -1,0 +1,42 @@
+header {
+    background-color: #000;
+    padding: 20px;
+    padding-left: 10%;
+}
+
+.white {
+    color: white;
+    display: inline;
+    padding: 8px;
+}
+
+.upper-block {
+    background-color:  #c6bfbf;
+    padding: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.lower-block {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.item {
+    padding-left: 25px;
+}
+
+footer {
+    background-color:  #0b4d14;;
+    padding: 10px 10% 30px; 
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
