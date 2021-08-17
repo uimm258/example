@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script> -->
+    <title>Jquery</title>
+  </head>
+  <body>
+    <button class="continue">Hello BTN</button>
+    <button class="continue2">Hello BTN</button>
+
+    <script>
+      //ES6;
+      class PQuery {
+        constructor(selector) {
+          this.selector = selector;
+          this.element = document.querySelector(this.selector);
+        }
+        html(htmlStr) {
+          this.element.innerHTML = htmlStr;
+        }
+      }
+      const $ = (cssSelector) => {
+        return new PQuery(cssSelector);
+      };
+      $('button.continue').html('Hello');
+      $('button.continue2').html('Hello2');
+
+      //   const btn1 = $('button.continue');
+      //   const btn2 = $('button.continue2');
+      //   console.log(btn1.html == btn2.html);
+
+      //   var hiddenBox = $('#banner-message');
+      //   $('#button-container button').on('click', function (event) {
+      //     hiddenBox.show();
+      //   });
+
+      //   $.ajax({
+      //     url: '/api/getWeather',
+      //     data: {
+      //       zipcode: 97201,
+      //     },
+      //     success: function (result) {
+      //       $('#weather-temp').html('<strong>' + result + '</strong> degrees');
+      //     },
+      //   });
+    </script>
+  </body>
+</html>
