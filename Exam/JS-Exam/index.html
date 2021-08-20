@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam 1 Search Albums</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div>
+        <form id="header">
+            <label for="artist-name"></label>
+            <input type="text" placeholder="Type name here" id="artist-name">
+            <input type="submit" value="Go!" id="submit-button">
+        </form>
+
+        <h1 id="title">Search Artists By Name</h1>
+
+        <div>
+            <section id="results" class="hidden">
+                <h2>Here You Go! </h2>
+                <div id="results-list"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.0.6/fetch-jsonp.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

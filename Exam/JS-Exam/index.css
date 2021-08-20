@@ -1,0 +1,42 @@
+#header {
+    background-color: aquamarine;
+    height: 70px;
+    font-size: 30px;
+    padding: 10px;
+}
+
+#artist-name {
+    font-size: 30px;
+    border-radius: 5px;
+    margin-left: 40%;
+    text-align: center;
+}
+
+#submit-button {
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#results-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#result-card{
+    width: 20vh;
+    height: 25vh;
+    margin: 1.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
