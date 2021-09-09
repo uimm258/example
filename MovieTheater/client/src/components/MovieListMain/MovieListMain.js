@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Movie from '../Movie/Movie';
-import Context from '../Context';
+import Context from '../../Context';
 import { getMoviesForGenres } from '../../helpers';
 import './MovieListMain.css';
 import { Link } from 'react-router-dom';
-import TokenService from '../services/token-service';
+import TokenService from '../../services/token-service';
 import config from '../../config';
 
 class MovieListMain extends Component {

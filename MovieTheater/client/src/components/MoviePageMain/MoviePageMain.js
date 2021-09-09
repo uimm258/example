@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { findMovie } from '../movies-helpers'
+import { findMovie } from '../../helpers';
 import Movie from '../Movie/Movie';
 import Context from '../../Context';
 import './MoviePageMain.css';

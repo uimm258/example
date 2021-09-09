@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom'
 import { countMoviesForGenres } from '../../helpers'
 import './MovieListNav.css'
 import Context from '../../Context'
-import TokenService from '../services/token-service'
+import TokenService from '../../services/token-service'
 
 class MovieListNav extends Component {
     static contextType = Context;

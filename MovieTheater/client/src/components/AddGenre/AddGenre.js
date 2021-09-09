@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Context from "../../Context";
 import config from "../../config";
-import TokenService from "../services/token-service";
+import TokenService from "../../services/token-service";
 
 class AddGenre extends Component {
     static contextType = Context;

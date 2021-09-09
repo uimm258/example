@@ -3,13 +3,13 @@ import { Route, Link } from 'react-router-dom';
 import Context from '../Context';
 import config from '../config';
 import MovieListNav from '../components/MovieListNav/MovieListNav';
-import MovieListMain from '../component/MovieListMain/MovieListMain';
-import MoviePageNav from '../component/MoviePageNav/MoviePageNav';
-import MoviePageMain from '../component/MoviePageMain/MoviePageMain';
-import LoginRoute from '../component/Login/LoginRoute';
-import AddGenre from '../component/AddGenre/AddGenre';
-import AddMovie from '../component/AddMovie/AddMovie';
-import './Routes.css';
+import MovieListMain from '../components/MovieListMain/MovieListMain';
+import MoviePageNav from '../components/MoviePageNav/MoviePageNav';
+import MoviePageMain from '../components/MoviePageMain/MoviePageMain';
+import LoginRoute from '../components/Login/LoginRoute';
+import AddGenre from '../components/AddGenre/AddGenre';
+import AddMovie from '../components/AddMovie/AddMovie';
+import './routes.css';
 
 class Routes extends Component {
   state = {
