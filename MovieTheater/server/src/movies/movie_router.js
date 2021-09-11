@@ -1,5 +1,5 @@
 const express = require('express');
-const MoviesService = require('./Movies_service');
+const MoviesService = require('./movies_services');
 const xss = require('xss');
 const MoviesRouter = express.Router();
 const jsonParser = express.json();

@@ -1,1 +1,1 @@
-DROP TABLE if not exists movies;
+DROP TABLE if exists movies;

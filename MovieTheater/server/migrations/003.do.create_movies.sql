@@ -5,5 +5,5 @@ CREATE TABLE if not exists movies (
     movies_type TEXT NOT NULL, 
     content TEXT NOT NULL,
     genres_id INTEGER REFERENCES genres(id),
-    admin_id INTEGER REFERENCES admin(id),
+    admin_id INTEGER REFERENCES admin(id)
 );

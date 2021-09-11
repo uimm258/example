@@ -5,10 +5,10 @@ const cors = require('cors');
 const helmet = require('helmet');
 const { NODE_ENV } = require('./config');
 const GenresRouter = require('./genres/genres_router');
-const MoviesRouter = require('./movies/movies_router');
+const MoviesRouter = require('./movies/movie_router');
 const authRouter = require('./auth/auth-router');
 const AdminGenresRouter = require('./genres/admin_genres_router');
-const AdminMoviesRouter = require('./movies/admin_movies_route');
+const AdminMoviesRouter = require('./movies/admin_movie_router');
 
 const app = express();
 
