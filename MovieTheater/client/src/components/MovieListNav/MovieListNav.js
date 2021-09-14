@@ -22,19 +22,19 @@ class MovieListNav extends Component {
     };
 
     render() {
-        const { genres = [], movies = [] } = this.context;
+        const { Genre = [], Movies = [] } = this.context;
         return (
             <div className="MovieListNav">
                 {this.renderBackButton()}
                 <ul className={`MovieListNav_list ${this.props.match.path === "/" ? " " : "genres"}`}>
-                    {genres.map(genre =>
+                    {Genre.map(genre =>
                         <li key={genre.id}>
                             <NavLink
                                 className='MovieListNav_genre-link'
                                 to={`/genres/${genre.id}`}
                             >
                                 <span className='MovieListNav_num-movies'>
-                                    {countMoviesForGenres(movies, parseInt(genre.id))}
+                                    {countMoviesForGenres(Movies, parseInt(genre.id))}
                                 </span>
                                 {genre.genres_name}
                             </NavLink>

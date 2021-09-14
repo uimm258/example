@@ -65,14 +65,15 @@ class Routes extends Component {
   renderNavRoutes() {
     return (
       <>
-        {["/", "/genre/:genre_id"].map(path =>(
           <Route
-            exact
-            key={path}
-            path={path}
-            component={MovieListNav}
+              path={"/genre/:genre_id"}
+              component={MovieListNav}
           />
-        ))}
+          <Route
+              path={'/'}
+              component={MovieListNav}
+          />
+
         <Route path='/movies/:movieId' component={MoviePageNav}
         />
         <Route path='/add-genre' component={MoviePageNav} />
@@ -84,7 +85,6 @@ class Routes extends Component {
   renderMainRoutes() {
     return (
       <>
-        <Route exact path="/" />
         <Route path={'/login'} component={LoginRoute} />
         
         <Route
@@ -115,7 +115,7 @@ class Routes extends Component {
       <Context.Provider value={value}>
         <div className="Route">
           <nav className="Route_nav">
-            {this.renderNavRoutes()}
+              {this.renderNavRoutes()}
           </nav>
 
           <header className="Route_header">
