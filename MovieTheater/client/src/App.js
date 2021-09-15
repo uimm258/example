@@ -10,6 +10,7 @@ import LoginRoute from './components/Login/LoginRoute';
 import AddGenre from './components/AddGenre/AddGenre';
 import AddMovie from './components/AddMovie/AddMovie';
 import Navbar from './components/Navbar/Navbar';
+import './App.css';
 
 class App extends Component {
   state = {
@@ -63,6 +64,7 @@ class App extends Component {
   }
 
   renderNavRoutes() {
+    console.log("hello")
     return (
       <>
           <Route
@@ -104,8 +106,8 @@ class App extends Component {
 
   render() {
     const value = {
-      Genre: this.state.Genre,
-      Movies: this.state.Movies,
+      genres: this.state.genres,
+      movies: this.state.movies,
       addGenre: this.handleAddGenre,
       addMovie: this.handleAddMovie,
       deleteMovie: this.handleDeleteMovie,
@@ -114,18 +116,18 @@ class App extends Component {
 
     return (
       <Context.Provider value={value}>
-        <div className="Route">
-          <nav className="Route_nav">
+        <div className="App">
+          <nav className="App_nav">
               {this.renderNavRoutes()}
           </nav>
 
-          <header className="Route_header">
+          <header className="App_header">
             <h1>
               <Link to="/"> Maymay's Movie Page</Link>
             </h1>
           </header>
 
-          <main className="Route_main">
+          <main className="App_main">
             {this.renderMainRoutes()}
           </main>
         </div>

@@ -26,6 +26,7 @@ class MovieListNav extends Component {
 
     render() {
         const { genres = [], movies = [] } = this.context;
+        console.log("hello2")
         return (
             <div className="MovieListNav">
                 {this.renderBackButton()}
@@ -46,13 +47,13 @@ class MovieListNav extends Component {
                 </ul>
 
                 <div>
-                    {TokenService.hasAuthToken() && <button
+                    {TokenService.hasAuthToken() && <CircleButton
                         tag={Link}
                         to='/add-genres'
                         type='button'
                         className="add-genre-button">
                         Add Genre
-                    </button>}
+                    </CircleButton>}
                 </div>
             </div>
         )
