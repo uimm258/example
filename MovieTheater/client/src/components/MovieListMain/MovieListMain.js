@@ -3,6 +3,7 @@ import Movie from '../Movie/Movie';
 import Context from '../../Context';
 import { getMoviesForGenres } from '../../helpers';
 import './MovieListMain.css';
+import CircleButton from '../CircleButton/CircleButton';
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import config from '../../config';
@@ -55,13 +56,14 @@ class MovieListMain extends Component {
                 </ul>
 
                 <div>
-                    {TokenService.hasAuthToken() && <button
+                    {TokenService.hasAuthToken() && <CircleButton
                         tag={Link}
                         to='/add-movie'
                         type='button'
                         className="add-movie-button">
+                        <br/>
                         Add Movie
-                    </button>}
+                    </CircleButton>}
                 </div>
 
                 {TokenService.hasAuthToken() && <button onClick={this.handleDeleteGenre}>Delete the Current Genre</button>}

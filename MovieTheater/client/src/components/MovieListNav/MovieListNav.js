@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
-import { NavLink, Link } from 'react-router-dom'
-import { countMoviesForGenres } from '../../helpers'
-import './MovieListNav.css'
-import Context from '../../Context'
-import TokenService from '../../services/token-service'
+import React, { Component } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import { countMoviesForGenres } from '../../helpers';
+import './MovieListNav.css';
+import Context from '../../Context';
+import CircleButton from '../CircleButton/CircleButton';
+import TokenService from '../../services/token-service';
 
 class MovieListNav extends Component {
     static contextType = Context;
@@ -11,30 +12,32 @@ class MovieListNav extends Component {
     renderBackButton = () => {
         if (this.props.match.path !== "/") {
             return (
-                <button
+                <CircleButton
                     type='button'
+                    role='link'
                     onClick={() => this.props.history.goBack()}
                     className='MovieListNav_back-button' >
+                    <br />
                     Back
-                </button>
+                </CircleButton>
             )
         };
     };
 
     render() {
-        const { Genre = [], Movies = [] } = this.context;
+        const { genres = [], movies = [] } = this.context;
         return (
             <div className="MovieListNav">
                 {this.renderBackButton()}
                 <ul className={`MovieListNav_list ${this.props.match.path === "/" ? " " : "genres"}`}>
-                    {Genre.map(genre =>
+                    {genres.map(genre =>
                         <li key={genre.id}>
                             <NavLink
                                 className='MovieListNav_genre-link'
                                 to={`/genres/${genre.id}`}
                             >
                                 <span className='MovieListNav_num-movies'>
-                                    {countMoviesForGenres(Movies, parseInt(genre.id))}
+                                    {countMoviesForGenres(movies, parseInt(genre.id))}
                                 </span>
                                 {genre.genres_name}
                             </NavLink>

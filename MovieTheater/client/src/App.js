@@ -9,6 +9,7 @@ import MoviePageMain from './components/MoviePageMain/MoviePageMain';
 import LoginRoute from './components/Login/LoginRoute';
 import AddGenre from './components/AddGenre/AddGenre';
 import AddMovie from './components/AddMovie/AddMovie';
+import Navbar from './components/Navbar/Navbar';
 
 class App extends Component {
   state = {
@@ -84,6 +85,7 @@ class App extends Component {
   renderMainRoutes() {
     return (
       <>
+        <Route exact path="/" component={Navbar} />
         <Route path={'/login'} component={LoginRoute} />
         
         <Route
