@@ -1,0 +1,28 @@
+.movies {
+  display : flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.movie-image-div {
+  width: 300px;
+  border: 1.8px solid rgb(141, 141, 141);
+  margin: 30px;
+  border-radius: 4px;
+}
+
+.movie-image-div:hover {
+  box-shadow: #636B61 10px 10px 5px;
+  cursor: pointer;
+}
+
+.movie-image-div:active {
+  box-shadow: gray 0px 0px 0px;
+}
+
+.list-image {
+  max-width: 175px;
+  max-height: 100%;
+  margin-top: 30px;
+}
