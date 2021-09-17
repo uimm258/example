@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import HomeIcon from '@material-ui/icons/Home';
@@ -42,7 +42,7 @@ function Header() {
         if (password.trim().length > 0 && username.trim().length > 0) {
             dispatch({
                 type: 'LOGIN_USER',
-                payload: {username, password}
+                payload: { username, password }
             });
             setOpen(false);
         }
@@ -58,7 +58,7 @@ function Header() {
         if (password.trim().length > 0 && username.trim().length > 0) {
             dispatch({
                 type: 'REGISTER_USER',
-                payload: {username, password}
+                payload: { username, password }
             });
             setOpen(false);
         }
@@ -81,7 +81,7 @@ function Header() {
                         fullWidth
                         variant="standard"
                         value={username}
-                        onChange={({target: {value}}) => setUsername(value)}
+                        onChange={({ target: { value } }) => setUsername(value)}
                     />
 
                     <TextField
@@ -92,7 +92,7 @@ function Header() {
                         fullWidth
                         variant="standard"
                         value={password}
-                        onChange={({target: {value}}) => setPassword(value)}
+                        onChange={({ target: { value } }) => setPassword(value)}
                     />
                 </DialogContent>
                 <DialogActions>
@@ -106,28 +106,28 @@ function Header() {
 
                 <Box m={1}>
                     <Button component={Link} to="/" onClick={clearDetailsReducer}>
-                        <HomeIcon/>Home
+                        <HomeIcon />Home
                     </Button>
 
                     {
                         userStatus ?
                             <>
                                 <Button component={Link} to="/addmovie">
-                                    <AddBoxIcon/>Add Movie
+                                    <AddBoxIcon />Add Movie
                                 </Button>
 
                                 <Button onClick={logout}>
-                                    <LoginIcon/>Log Out
+                                    <LoginIcon />Log Out
                                 </Button>
                             </>
                             :
                             <>
                                 <Button onClick={() => openLoginModal(true)}>
-                                    <LogoutIcon/>Log In
+                                    <LogoutIcon />Log In
                                 </Button>
 
                                 <Button onClick={() => openLoginModal(false)}>
-                                    <PersonAddIcon/>Register
+                                    <PersonAddIcon />Register
                                 </Button>
                             </>
                     }
