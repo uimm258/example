@@ -1,12 +1,12 @@
-### Maymay's Movie Page!
+# Maymay's Movie Page!
 
-# Idea
+### Idea
     This page displays a bundle of movies and user can log in to add or delete movies. 
 
-# Run server
+### Run server
     cd server
     npm start server
 
-# Run Client
+### Run Client
     npm start client
 
