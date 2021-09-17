@@ -23,7 +23,8 @@ function* logoutUser() {
     try {
         yield axios.get('/logout');
         yield put({ type: 'LOGOUT' });
-    } catch {
+    } 
+    catch {
         console.log('logout error');
     }
 }
@@ -41,7 +42,8 @@ function* registerUser(action) {
     try {
         yield axios.post('/register', action.payload);
         yield put({ type: 'LOGIN' });
-    } catch {
+    } 
+    catch {
         console.log('login error');
     }
 }
@@ -51,8 +53,8 @@ function* fetchAllMovies() {
         const movies = yield axios.get('/api/movie');
         console.log('get all:', movies.data);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
-
-    } catch {
+    } 
+    catch {
         console.log('get all error');
     }
         
@@ -63,8 +65,8 @@ function* fetchSingleMovie(action) {
       const singleMovie = yield axios.get(`/api/movie/${action.payload}`);
       console.log('get single movie:', singleMovie.data);
       yield put({ type: 'SET_MOVIE_DETAILS', payload: singleMovie.data[0] });
-
-  } catch {
+  } 
+  catch {
       console.log('get all error');
   }
       
@@ -74,9 +76,7 @@ function* addNewMovie(action) {
   console.log('action.payload', action.payload);
   try {
     yield axios.post('/api/movie', action.payload);
-    yield put({ 
-      type: 'FETCH_MOVIES'
-    })
+    yield put({ type: 'FETCH_MOVIES' })
   }
   catch (err) {
     console.log('Error in Saga POST', err);
@@ -86,9 +86,7 @@ function* addNewMovie(action) {
 function* deleteMovie(action) {
   try {
     yield axios.delete(`api/movie/${action.payload}`)
-    yield put({ 
-      type: 'FETCH_MOVIES'
-    })
+    yield put({ type: 'FETCH_MOVIES' })
   }
   catch (err) {
     console.log('Error in Saga Delete', err);
@@ -152,7 +150,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={storeInstance}>
-        <App />
+            <App />
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')
