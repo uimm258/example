@@ -13,7 +13,7 @@ class MovieListNav extends Component {
         if (this.props.match.path !== "/") {
             return (
                 <CircleButton
-                    type='button'
+                    tag='button'
                     role='link'
                     onClick={() => this.props.history.goBack()}
                     className='MovieListNav_back-button' >
@@ -21,16 +21,15 @@ class MovieListNav extends Component {
                     Back
                 </CircleButton>
             )
-        };
+        }
     };
 
     render() {
         const { genres = [], movies = [] } = this.context;
-        console.log("hello2")
         return (
             <div className="MovieListNav">
                 {this.renderBackButton()}
-                <ul className={`MovieListNav_list ${this.props.match.path === "/" ? " " : "genres"}`}>
+                <ul className={`MovieListNav_list ${this.props.match.path === "/" ? " " : "genre"}`}>
                     {genres.map(genre =>
                         <li key={genre.id}>
                             <NavLink
