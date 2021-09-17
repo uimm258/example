@@ -32,15 +32,15 @@ function MovieDetails() {
     dispatch({
       type: 'CLEAR_DETAILS'
     })
-  }
+  };
 
   const handleDelete = () => {
     dispatch({
       type: 'DELETE_MOVIE',
       payload: movieDetails.id
-    })
+    });
     history.push('/');
-  }
+  };
 
   const [open, setOpen] = React.useState(false);
 
@@ -57,8 +57,10 @@ function MovieDetails() {
       <Button component={Link} to="/" color="primary" style={style} onClick={clearDetailsReducer}>
         <ArrowBackIcon />  Back To List
       </Button>
+      
       <div className="details-container">
         <h2 className="movie-detail-title">{movieDetails.title}</h2>
+
         <ul id="genre-list">
           {movieGenres.map((genre) => {
             return (
@@ -66,13 +68,17 @@ function MovieDetails() {
             )
           })}
         </ul>
+
         <img className="detail-image" src={movieDetails.poster} />
+
         <div className="description-container">
           <p className="description-text">{movieDetails.description}</p>
         </div>
+
         <Box mt={7}>
           <Button variant="contained" color="secondary" onClick={handleClickOpen}>Delete</Button>
         </Box>
+
         <Dialog
           open={open}
           onClose={handleClose}
@@ -80,15 +86,18 @@ function MovieDetails() {
           aria-describedby="alert-dialog-description"
         >
           <DialogTitle id="alert-dialog-title">{"Confirm Delete"}</DialogTitle>
+
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
               Are you sure you want to Delete?
             </DialogContentText>
           </DialogContent>
+
           <DialogActions>
             <Button onClick={handleClose} color="primary">
               Cancel
             </Button>
+
             <Button
               onClick={() => {
                 handleClose();
@@ -97,11 +106,14 @@ function MovieDetails() {
               color="secondary" variant="contained" autoFocus>
               Delete
             </Button>
+          
           </DialogActions>
+      
         </Dialog>
+      
       </div>
     </>
   )
-}
+};
 
 export default MovieDetails;

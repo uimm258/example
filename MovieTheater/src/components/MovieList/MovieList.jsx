@@ -10,27 +10,25 @@ function MovieList() {
   const movies = useSelector(store => store.movies);
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_MOVIES' });
+    dispatch({ type: 'FETCH_MOVIES' })
   }, []);
 
   const handleImageClick = (movieId) => {
-    console.log('handleImageClick');
     dispatch({
       type: 'FETCH_SINGLE_MOVIE',
       payload: movieId
     });
-
     toDetailsPage(movieId);
-  }
-
+  };
 
   const toDetailsPage = (movieId) => {
     history.push(`/details/${movieId}`)
-  }
+  };
 
 
   return (
     <main>
+      
       <section className="movies">
         {movies.map(movie => {
           return (
@@ -38,14 +36,16 @@ function MovieList() {
               key={movie.id}
               className="movie-image-div"
               onClick={() => handleImageClick(movie.id)}>
+
               <img className="list-image" src={movie.poster} alt={movie.title} />
+              
               <h3>{movie.title}</h3>
             </div>
           );
         })}
       </section>
+    
     </main>
-
   );
 }
 

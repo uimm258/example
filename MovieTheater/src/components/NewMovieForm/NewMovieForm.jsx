@@ -10,7 +10,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 
-
 function NewMovieForm() {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -24,34 +23,37 @@ function NewMovieForm() {
 
   const titleChange = (event) => {
     setNewMovieData({ ...newMovieData, title: event.target.value })
-  }
+  };
 
   const posterChange = (event) => {
     setNewMovieData({ ...newMovieData, poster: event.target.value })
-  }
+  };
 
   const descriptionChange = (event) => {
     setNewMovieData({ ...newMovieData, description: event.target.value })
-  }
+  };
 
   const genreChange = (event) => {
     setNewMovieData({ ...newMovieData, genre: event.target.value })
-  }
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
     dispatch({
       type: 'ADD_NEW_MOVIE',
       payload: newMovieData
-    })
+    });
+
     history.push('/');
+
     setNewMovieData({
       title: '',
       poster: '',
       description: '',
       genre: ''
-    });
-  }
+    })
+  };
 
   const handleCancel = () => {
     history.push('/');
@@ -60,12 +62,14 @@ function NewMovieForm() {
       poster: '',
       description: '',
       genre: ''
-    });
-  }
+    })
+  };
 
   return (
     <div>
+
       <h2>Add a New Movie</h2>
+      
       <div id="form-container">
         <form onSubmit={handleFormSubmit}>
 
@@ -102,6 +106,7 @@ function NewMovieForm() {
 
           <FormControl style={{ minWidth: 200 }} variant="outlined">
             <InputLabel id="genreList">Genre:</InputLabel>
+            
             <Select
               name="genres"
               value={newMovieData.genre}
@@ -126,19 +131,24 @@ function NewMovieForm() {
             </Select>
 
           </FormControl>
+          
           <br />
+          
           <div id="form-buttons">
             <Box m={1}>
               <Button type="submit" variant="contained" color="Primary">Submit</Button>
             </Box>
+            
             <Box m={1}>
               <Button color="secondary" onClick={handleCancel}>Cancel</Button>
             </Box>
           </div>
+        
         </form>
       </div>
+    
     </div>
   )
-}
+};
 
 export default NewMovieForm;

@@ -28,14 +28,12 @@ function Header() {
     };
 
     const clearDetailsReducer = () => {
-        dispatch({
-            type: 'CLEAR_DETAILS'
-        })
-    }
+        dispatch({ type: 'CLEAR_DETAILS' })
+    };
 
     const openLoginModal = (isLoginModal) => {
         setOpen(true);
-        setIsLoginModal(isLoginModal);
+        setIsLoginModal(isLoginModal)
     };
 
     const login = () => {
@@ -48,10 +46,8 @@ function Header() {
         }
     };
 
-    const logout = () => {
-        dispatch({
-            type: 'LOGOUT_USER'
-        })
+    const logout = () => { 
+        dispatch({ type: 'LOGOUT_USER' })
     };
 
     const register = () => {
@@ -72,6 +68,7 @@ function Header() {
                     <DialogContentText>
                         {isLoginModal ? 'Please Login' : 'Please Register'}
                     </DialogContentText>
+
                     <TextField
                         autoFocus
                         margin="dense"
@@ -95,6 +92,7 @@ function Header() {
                         onChange={({ target: { value } }) => setPassword(value)}
                     />
                 </DialogContent>
+
                 <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
                     <Button onClick={isLoginModal ? login : register}>{isLoginModal ? 'Login' : 'Register'}</Button>
@@ -109,32 +107,31 @@ function Header() {
                         <HomeIcon />Home
                     </Button>
 
-                    {
-                        userStatus ?
-                            <>
-                                <Button component={Link} to="/addmovie">
-                                    <AddBoxIcon />Add Movie
-                                </Button>
+                    {userStatus ?
+                        <>
+                            <Button component={Link} to="/addmovie">
+                                <AddBoxIcon />Add Movie
+                            </Button>
 
-                                <Button onClick={logout}>
-                                    <LoginIcon />Log Out
-                                </Button>
-                            </>
-                            :
-                            <>
-                                <Button onClick={() => openLoginModal(true)}>
-                                    <LogoutIcon />Log In
-                                </Button>
+                            <Button onClick={logout}>
+                                <LoginIcon />Log Out
+                            </Button>
+                        </>
+                        :
+                        <>
+                            <Button onClick={() => openLoginModal(true)}>
+                                <LogoutIcon />Log In
+                            </Button>
 
-                                <Button onClick={() => openLoginModal(false)}>
-                                    <PersonAddIcon />Register
-                                </Button>
-                            </>
+                            <Button onClick={() => openLoginModal(false)}>
+                                <PersonAddIcon />Register
+                            </Button>
+                        </>
                     }
                 </Box>
             </div>
         </>
     )
-}
+};
 
 export default Header;
