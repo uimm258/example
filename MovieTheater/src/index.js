@@ -34,7 +34,8 @@ function* loginUser(action) {
         yield axios.post('/login', action.payload);
         yield put({ type: 'LOGIN' });
     } catch {
-        console.log('login error');
+        yield put({ type: 'LOGIN_FAILED'});
+        console.log('login error')
     }
 }
 
@@ -110,6 +111,8 @@ const user = (state = false, action) => {
     switch (action.type) {
         case 'LOGIN':
             return true;
+        case 'LOGIN_FAILED':
+            return alert('login error')
         case 'LOGOUT':
             return false;
         default:

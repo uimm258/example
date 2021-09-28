@@ -4,7 +4,7 @@
 // // Assume punctuation and numbers symbols are not included in the passed string.
 
 function sortString(str){
-    return str.split('').sort().join('')
-}
+    return str.split('').sort().join('');
+};
 
-console.log(sortString('webmaster'))
+console.log(sortString('webmaster'));

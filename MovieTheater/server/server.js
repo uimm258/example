@@ -1,4 +1,6 @@
 const express = require('express');
+require('dotenv').config();
+
 const app = express();
 const bodyParser = require('body-parser');
 const movieRouter = require('./routes/movie.router.js');
